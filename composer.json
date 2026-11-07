@@ -8,6 +8,11 @@
     "flagbearer"
   ],
   "homepage": "https://flagbearer.dev",
+  "support": {
+    "docs": "https://docs.flagbearer.dev/sdks/php",
+    "issues": "https://github.com/flagbearer-dev/php-sdk/issues",
+    "source": "https://github.com/flagbearer-dev/php-sdk"
+  },
   "require": {
     "php": ">=8.1",
     "ext-curl": "*",

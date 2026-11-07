@@ -15,7 +15,7 @@ final class FixturesTest extends TestCase
     private static function fixtures(): array
     {
         $data = json_decode(
-            (string) file_get_contents(__DIR__ . '/../../fixtures/evaluation.json'),
+            (string) file_get_contents(__DIR__ . '/fixtures/evaluation.json'),
             true,
             512,
             JSON_THROW_ON_ERROR,

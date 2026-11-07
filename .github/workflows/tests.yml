@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        # PHPUnit 12 needs PHP 8.3; the library itself supports 8.1.
+        php: ["8.3", "8.5"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: curl, mbstring
+          tools: composer
+      - run: composer validate --strict --no-check-publish
+      - run: composer install --quiet --no-interaction
+      - run: vendor/bin/phpunit
+      - run: vendor/bin/phpstan analyse
