@@ -7,5 +7,5 @@ namespace Flagbearer;
 final class Version
 {
     /** This SDK's version, sent with exposure reports. */
-    public const VERSION = '0.1.0';
+    public const VERSION = '1.0.0';
 }

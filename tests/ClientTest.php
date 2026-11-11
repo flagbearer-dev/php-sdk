@@ -250,7 +250,7 @@ final class ClientTest extends TestCase
             self::assertIsArray($upload['user']);
             self::assertIsString($upload['user']['key']);
             $byUser[$upload['user']['key']] = $upload;
-            self::assertSame(['php', '0.1.0', 'build-7'], [$upload['sdk'], $upload['sdkVersion'], $upload['appVersion']]);
+            self::assertSame(['php', '1.0.0', 'build-7'], [$upload['sdk'], $upload['sdkVersion'], $upload['appVersion']]);
         }
         $first = $byUser['user-1'];
         self::assertSame(['key' => 'user-1', 'email' => 'ann@example.com'], $first['user']);
