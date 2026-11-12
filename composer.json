@@ -1,11 +1,14 @@
 {
   "name": "flagbearer/flagbearer",
-  "description": "Flagbearer PHP SDK",
+  "description": "Feature flags for PHP and Laravel: checked locally, with gradual rollouts, from Flagbearer.",
   "type": "library",
   "license": "MIT",
   "keywords": [
     "feature-flags",
-    "flagbearer"
+    "feature-toggles",
+    "gradual-rollouts",
+    "flagbearer",
+    "laravel"
   ],
   "homepage": "https://flagbearer.dev",
   "support": {
